@@ -49,6 +49,7 @@ header{
     font-weight: 400;
     font-size: 16px;
     line-height: 100%;
+    cursor: pointer;
 }
 
 #button1{
