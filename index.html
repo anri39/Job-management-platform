@@ -4,10 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://free.bboxtype.com/embedfonts/?family=FiraGO:300" rel="stylesheet">    <link rel="stylesheet" href="/bootCampProject/style.css">
 </head>
 <body>
-    
+    <header>
+        <div class="logo">
+            <p>Momentum</p>
+            <img src="/bootCampProject/Decals/Hourglass.png" alt="hourglass" id="hourglass">   
+        </div>
+        <div class="btns">
+            <button class="btn" id="button1">თანამშრომლის შექმნა</button>
+            <button class="btn" id="button2">+ შექმენი ახალი დავალება</button>
+        </div>
+    </header>
+   <!-- header ends -->
+
+    <section id="start-words">
+      <p id="inside-start">დავალებების გვერდი</p>
+    </section>
+
+    <section id="drop-down">
+     <div class="options" id="departament">
+        <p class="p-dropdown p-first">დეპარტამენტი</p>
+        <img src="/bootCampProject/Decals/purpleIcon.png" alt="dropicon" class="icon-dropdown">
+     </div>
+     <div class="options" id="priority">
+        <p class="p-dropdown">პრიორიტეტი</p>
+        <img src="/bootCampProject/Decals/Icon.png" alt="dropicon" class="icon-dropdown">
+     </div>
+     <div class="options" id="worker">
+        <p class="p-dropdown">თანამშრომელი</p>
+        <img src="/bootCampProject/Decals/Icon.png" alt="dropicon" class="icon-dropdown">
+     </div>
+    </section>
+   <!-- filter drop-down ends -->
+
+   <section id="work-boxes">
+
+    <div class="start box-container">
+        <p class="startP box-header">დასაწყები</p>
+        <ul class="start-boxes"></ul>
+    </div>
+
+    <div class="progress box-container">
+        <p class="progressP box-header">პროგრესში</p>
+        <ul class="start-boxes"></ul>
+    </div>
+   
+    <div class="ready box-container">
+        <p class="readyP box-header">მზად ტესტირებისთვის</p>
+        <ul class="start-boxes"></ul>
+    </div>
+
+    <div class="finished box-container">
+        <p class="finishedP box-header">დასრულებული</p>
+        <ul class="start-boxes"></ul>
+    </div>
+
+
+   </section>
+
+
 </body>
-<script src="script.js"></script>
+<script src="/bootCampProject/script.js"></script>
 </html>
