@@ -22,55 +22,57 @@
 
     <p id="createText">შექმენი ახალი დავალება</p>
 
-
     <div class="container">
-
-    <div class="left-part">
-    <div class="header">
-      <p>სათაური*</p>
-      <input type="text" id="inputforHeader">
-    </div>
-  
-    <div class="description">
-      <p>აღწერა</p>
-      <input type="text" id="inputforDescription">
-    </div>
-
-
-     <div class="priority">
-        
-      <div class="paragraphs">
-        <p>პრიორიტეტი*</p>
-        <p>სტატუსი*</p>
-      </div>
-     <div class="inputs"> 
-        <input type="text" id="inputforPriority">
-        <input type="text" id="inputforStatus">
-    </div>
-
-
-     </div>
-    </div>
-
-    <div class="right-part">
-        <div class="departament">
-          <p>დეპარტამენტი*</p>
-          <input type="text" id="inputforDepartament">
+        <div class="left-part">
+            <div class="header">
+                <p>სათაური*</p>
+                <input type="text" class="input" id="inputforHeader">
+            </div>
+            <div class="description">
+                <p>აღწერა</p>
+                <input type="text" class="input" id="inputforDescription">
+            </div>
+            <div class="priority">
+                <div class="paragraphs">
+                    <p>პრიორიტეტი*</p>
+                    <p>სტატუსი*</p>
+                </div>
+                <div class="inputs">
+                    <div class="input" id="inputforPriority">
+                        <img src="/bootCampProject/Decals/Medium.png" alt="">
+                        <p>საშუალო</p>
+                        <img src="/bootCampProject/Decals/arrow-down.png" alt="arrowdown" class="arrow-down">
+                    </div>
+                    <div class="input" id="inputforStatus">
+                        <p>დასაწყები</p>
+                        <img src="/bootCampProject/Decals/arrow-down.png" alt="arrowdown" class="arrow-down">
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="worker">
-            <p>პასუხისმგებელი თანამშრომელი</p>
-            <input type="text">
+        <div class="right-part">
+            <div class="departament">
+                <p>დეპარტამენტი*</p>
+                <div class="input" id="inputforDepartament">
+                    <p>დასაწყები</p>
+                    <img src="/bootCampProject/Decals/arrow-down.png" alt="arrowdown" class="arrow-down">
+                </div>
+            </div>
+            <div class="worker">
+                <p>პასუხისმგებელი თანამშრომელი</p>
+                <div class="input" id="inputforWorker" >
+                    <p></p>
+                    <img src="/bootCampProject/Decals/arrow-down.png" alt="arrowdown" class="arrow-down">
+                </div>
+            </div>
+            <div class="deadline">
+                <p>დედლაინი</p>
+                <input type="date" class="input" id="inputforDate">
+            </div>
+            <button id="createButton">დავალების შექმნა</button>
         </div>
-
-        <div class="deadline">
-            <p>დედლაინი</p>
-            <input type="date" id="inputforDate">
-        </div>
-
-        <button id="createButton">დავალების შექმნა</button>
     </div>
-
-</div>
 </body>
+<script src="/bootCampProject/script.js"></script>
 </html>
