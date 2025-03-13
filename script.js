@@ -1,25 +1,27 @@
-const taskTitleElement = document.getElementById("inputforHeader");
-const taskDescriptionElement = document.getElementById("inputforDescription");
-const taskPriorityElement = document.getElementById("inputforPriority");
-const taskStatusElement = document.getElementById("inputforStatus");
-const taskDepartmentElement = document.getElementById("inputforDepartament");
-const taskWorkerElement = document.getElementById("inputforWorker");
-const taskDeadlineElement = document.getElementById("inputforDate");
+const taskTitle = document.getElementById("inputforHeader");
+const taskDescription = document.getElementById("inputforDescription");
+const taskPriority = document.getElementById("inputforPriority");
+const taskStatus = document.getElementById("inputforStatus");
+const taskDepartment = document.getElementById("inputforDepartament");
+const taskWorker = document.getElementById("inputforWorker");
+const taskDeadline = document.getElementById("inputforDate");
 
-function getUserInfo() {
-    const userInfo = {
-        task_title: taskTitleElement.value, 
-        task_description: taskDescriptionElement.value, 
-        task_priority: taskPriorityElement.innerText.trim(),
-        task_status: taskStatusElement.innerText.trim(),
-        task_department: taskDepartmentElement.innerText.trim(),
-        task_worker: taskWorkerElement.innerText.trim(),
-        task_deadline: taskDeadlineElement.value
-    };
 
-    console.log(userInfo);
-}
-
-document.getElementById("createButton").addEventListener("click", () => {
-    getUserInfo(); 
+// drop-down start
+document.getElementById("inputforPriority").addEventListener("click", () => {
+    document.getElementById("priorityDropdown").style.display = "block";
 });
+
+document.querySelectorAll("#priorityDropdown li").forEach(item => {
+    item.addEventListener("click",  () => {
+        document.getElementById("priorityText").textContent = this.textContent;
+        document.getElementById("priorityDropdown").style.display = "none";
+    });
+});
+
+document.addEventListener("click",  event => {
+    if (!document.querySelector(".custom-dropdown").contains(event.target)) {
+        document.getElementById("priorityDropdown").style.display = "none";
+    }
+});
+// drop-down end

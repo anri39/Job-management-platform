@@ -1,78 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <link href="https://free.bboxtype.com/embedfonts/?family=FiraGO:300" rel="stylesheet">   
-    <link rel="stylesheet" href="makeJob.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://free.bboxtype.com/embedfonts/?family=FiraGO:300"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="makeJob.css" />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <p>Momentum</p>
-            <img src="/bootCampProject/Decals/Hourglass.png" alt="hourglass" id="hourglass">   
-        </div>
-        <div class="btns">
-            <button class="btn" id="button1">თანამშრომლის შექმნა</button>
-            <button class="btn" id="button2">+ შექმენი ახალი დავალება</button>
-        </div>
+      <div class="logo">
+        <p>Momentum</p>
+        <img
+          src="/bootCampProject/Decals/Hourglass.png"
+          alt="hourglass"
+          id="hourglass"
+        />
+      </div>
+      <div class="btns">
+        <button class="btn" id="button1">თანამშრომლის შექმნა</button>
+        <button class="btn" id="button2">+ შექმენი ახალი დავალება</button>
+      </div>
     </header>
 
     <p id="createText">შექმენი ახალი დავალება</p>
 
     <div class="container">
-        <div class="left-part">
-            <div class="header">
-                <p>სათაური*</p>
-                <input type="text" class="input" id="inputforHeader">
-            </div>
-            <div class="description">
-                <p>აღწერა</p>
-                <input type="text" class="input" id="inputforDescription">
-            </div>
-            <div class="priority">
-                <div class="paragraphs">
-                    <p>პრიორიტეტი*</p>
-                    <p>სტატუსი*</p>
-                </div>
-                <div class="inputs">
-                    <div class="input" id="inputforPriority">
-                        <img src="/bootCampProject/Decals/Medium.png" alt="">
-                        <p>საშუალო</p>
-                        <img src="/bootCampProject/Decals/arrow-down.png" alt="arrowdown" class="arrow-down">
-                    </div>
-                    <div class="input" id="inputforStatus">
-                        <p>დასაწყები</p>
-                        <img src="/bootCampProject/Decals/arrow-down.png" alt="arrowdown" class="arrow-down">
-                    </div>
-                </div>
-            </div>
+      <div class="left-part">
+        <div class="header">
+          <p>სათაური*</p>
+          <input type="text" class="input" id="inputforHeader" />
         </div>
+        <div class="description">
+          <p>აღწერა</p>
+          <input type="text" class="input" id="inputforDescription" />
+        </div>
+        <div class="priority">
+          <div class="paragraphs">
+            <p>პრიორიტეტი*</p>
+            <p>სტატუსი*</p>
+          </div>
+          <div class="inputs">
+            <div class="custom-dropdown"> <!--ADDED-->
+              <div class="input" id="inputforPriority">
+                <img src="/bootCampProject/Decals/Medium.png" alt="" />
+                <p id="priorityText">საშუალო</p> <!--ADDED-->
+                <img
+                  src="/bootCampProject/Decals/arrow-down.png"
+                  alt="arrowdown"
+                  class="arrow-down"
+                />
+              </div>
+            </div>
+            <div class="input" id="inputforStatus">
+              <p>დასაწყები</p>
+              <img
+                src="/bootCampProject/Decals/arrow-down.png"
+                alt="arrowdown"
+                class="arrow-down"
+              />
+            </div>
+          </div>
 
-        <div class="right-part">
-            <div class="departament">
-                <p>დეპარტამენტი*</p>
-                <div class="input" id="inputforDepartament">
-                    <p>დასაწყები</p>
-                    <img src="/bootCampProject/Decals/arrow-down.png" alt="arrowdown" class="arrow-down">
-                </div>
-            </div>
-            <div class="worker">
-                <p>პასუხისმგებელი თანამშრომელი</p>
-                <div class="input" id="inputforWorker" >
-                    <p></p>
-                    <img src="/bootCampProject/Decals/arrow-down.png" alt="arrowdown" class="arrow-down">
-                </div>
-            </div>
-            <div class="deadline">
-                <p>დედლაინი</p>
-                <input type="date" class="input" id="inputforDate">
-            </div>
-            <button id="createButton">დავალების შექმნა</button>
+            <!--To be replaced-->
+            <ul class="dropdown-menu" id="priorityDropdown">
+                <li data-value="low">დაბალი</li>
+                <li data-value="medium">საშუალო</li>
+                <li data-value="high">მაღალი</li>
+            </ul>
+
         </div>
+      </div>
+
+      <div class="right-part">
+        <div class="departament">
+          <p>დეპარტამენტი*</p>
+          <div class="input" id="inputforDepartament">
+            <p>დასაწყები</p>
+            <img
+              src="/bootCampProject/Decals/arrow-down.png"
+              alt="arrowdown"
+              class="arrow-down"
+            />
+          </div>
+        </div>
+        <div class="worker">
+          <p>პასუხისმგებელი თანამშრომელი</p>
+          <div class="input" id="inputforWorker">
+            <p></p>
+            <img
+              src="/bootCampProject/Decals/arrow-down.png"
+              alt="arrowdown"
+              class="arrow-down"
+            />
+          </div>
+        </div>
+        <div class="deadline">
+          <p>დედლაინი</p>
+          <input type="date" class="input" id="inputforDate" />
+        </div>
+        <button id="createButton">დავალების შექმნა</button>
+      </div>
     </div>
-</body>
-<script src="/bootCampProject/script.js"></script>
+  </body>
+  <script src="/bootCampProject/script.js"></script>
 </html>

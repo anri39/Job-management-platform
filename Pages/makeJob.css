@@ -208,3 +208,31 @@ div p{
     margin-top: 60px;
     margin-left: 340px;
 }
+
+/*DROPDOWN SELECTION*/
+.custom-dropdown {
+    position: relative;
+    width: 259px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    width: 259px;
+    background: white;
+    border: 1px solid #DEE2E6;
+    list-style: none;
+    padding: 0;
+    margin-top: 80px;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f1f1f1;
+}
+
