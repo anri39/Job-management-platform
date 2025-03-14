@@ -37,10 +37,14 @@
         <div class="header">
           <p>სათაური*</p>
           <input type="text" class="input" id="inputforHeader" />
+          <p class="requirements">მინიმუმ 2 სიმბოლო</p>
+          <p class="requirements">მაქსიმუმ 255 სიმბოლო</p>
         </div>
         <div class="description">
           <p>აღწერა</p>
           <input type="text" class="input" id="inputforDescription" />
+          <p class="requirements">მინიმუმ 2 სიმბოლო</p>
+          <p class="requirements">მაქსიმუმ 255 სიმბოლო</p>
         </div>
         <div class="priority">
           <div class="paragraphs">
@@ -48,10 +52,20 @@
             <p>სტატუსი*</p>
           </div>
           <div class="inputs">
-            <div class="custom-dropdown"> <!--ADDED-->
+            <div class="custom-dropdown"> <!-- ADDED -->
               <div class="input" id="inputforPriority">
                 <img src="/bootCampProject/Decals/Medium.png" alt="" />
-                <p id="priorityText">საშუალო</p> <!--ADDED-->
+                <p id="priorityText">საშუალო</p> <!-- ADDED -->
+                <img
+                  src="/bootCampProject/Decals/arrow-down.png"
+                  alt="arrowdown"
+                  class="arrow-down arrowdown"
+                />
+              </div>
+            </div>
+            <div class="custom-dropdown">
+              <div class="input" id="inputforStatus">
+                <p class="statusText">დასაწყები</p>
                 <img
                   src="/bootCampProject/Decals/arrow-down.png"
                   alt="arrowdown"
@@ -59,23 +73,12 @@
                 />
               </div>
             </div>
-            <div class="input" id="inputforStatus">
-              <p>დასაწყები</p>
-              <img
-                src="/bootCampProject/Decals/arrow-down.png"
-                alt="arrowdown"
-                class="arrow-down"
-              />
-            </div>
           </div>
 
-            <!--To be replaced-->
-            <ul class="dropdown-menu" id="priorityDropdown">
-                <li data-value="low">დაბალი</li>
-                <li data-value="medium">საშუალო</li>
-                <li data-value="high">მაღალი</li>
-            </ul>
-
+          <!-- To be replaced -->
+          <ul class="dropdown-menu" id="priorityMenu"></ul>
+          <ul class="dropdown-menu" id="statusMenu"></ul>
+   
         </div>
       </div>
 
@@ -83,7 +86,7 @@
         <div class="departament">
           <p>დეპარტამენტი*</p>
           <div class="input" id="inputforDepartament">
-            <p>დასაწყები</p>
+            <p></p>
             <img
               src="/bootCampProject/Decals/arrow-down.png"
               alt="arrowdown"
@@ -91,8 +94,9 @@
             />
           </div>
         </div>
+        <ul class="dropdown-menu" id="departamentMenu"></ul> <!-- ADDED -->
         <div class="worker">
-          <p>პასუხისმგებელი თანამშრომელი</p>
+          <p class="disabled-text">პასუხისმგებელი თანამშრომელი</p>
           <div class="input" id="inputforWorker">
             <p></p>
             <img
@@ -110,5 +114,7 @@
       </div>
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/bootCampProject/Pages/dropdown.js"></script>
   <script src="/bootCampProject/script.js"></script>
 </html>

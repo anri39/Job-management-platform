@@ -113,15 +113,25 @@ div p{
 
 .inputs {
     display: flex;
-    gap: 50px;
+    gap: 80px;
+}
+
+.requirements{
+    margin-top: 5px;
+    font-weight: 350;
+    font-size: 11px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #6C757D;
 }
 
 .paragraphs {
     display: flex;
-    gap: 186px;
+    gap: 230px;
 }
 
 .right-part, .left-part {
+    margin-top: -100px;
     width: 550px;
     height: 674px;
     display: flex;
@@ -133,11 +143,11 @@ div p{
 }
 
 .right-part {
-    gap: 56px;
+    gap: 87px;
 }
 
 .left-part {
-    gap: 65.5px;
+    gap: 65px;
 }
 
 .input[readonly]:focus {
@@ -147,7 +157,7 @@ div p{
 
 
 .input {
-    width: 550px;
+    width: 640px;
     height: 45px;
     gap: 10px;
     border-radius: 5px;
@@ -157,8 +167,22 @@ div p{
     user-select: none;
 }
 
+.disabled-text{
+    color:#ADB5BD;
+}
+
+.worker .input {
+    pointer-events: none; /* Prevents clicking */
+    background-color: #e0e0e0; /* Greyed out */
+    color: #6c757d;
+}
+
 #inputforDescription {
     height: 133px;
+}
+
+.description{
+    margin-top: -5px;
 }
 
 #inputforDepartament, #inputforStatus, #inputforWorker {
@@ -172,12 +196,13 @@ div p{
     align-items: center;
 }
 
-.arrow-down{
-    padding-left: 120px;
+.arrowdown{
+    position: absolute;
+    right: -30px;
 }
 
 #inputforPriority, #inputforStatus, #inputforDate {
-    width: 259px;
+    width: 300px;
     height: 46px;
     gap: 6px;
 }
@@ -186,6 +211,10 @@ div p{
     width: 318px;
     height: 45px;
     padding: 14px;
+}
+
+.deadline{
+    margin-top: -5px;
 }
 
 .deadline > p:first-child {
@@ -215,6 +244,10 @@ div p{
     width: 259px;
 }
 
+#priorityDropdown, #statusDropdown {
+    display: none;
+}
+
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -224,6 +257,19 @@ div p{
     list-style: none;
     padding: 0;
     margin-top: 80px;
+}
+
+#priorityMenu{
+    width: 298px;
+}
+
+#statusMenu{
+    margin-left: 340px;
+    width: 298px;
+}
+
+#departamentMenu{
+    width: 550px;
 }
 
 .dropdown-menu li {
