@@ -66,7 +66,7 @@
    <!--Create Worker Profile-->
 
    <div class="blur"></div>
-   <div class="container">
+   <div class="container workAdd">
    
    <div class="close">
        <img src="/bootCampProject/Decals/X.png" alt="x" class="x">
@@ -79,11 +79,15 @@
      <div class="info">
        <div class="name">
          <p>სახელი*</p>
-         <input type="text" class="infoInput" />
+         <input type="text" class="infoInput firstInput" />
+         <p class="requirements requirementA">მინიმუმ 2 სიმბოლო</p>
+         <p class="requirements requirementA">მაქსიმუმ 255 სიმბოლო</p>
        </div>
        <div class="lastName">
          <p>გვარი*</p>
-         <input type="text" class="infoInput"/>
+         <input type="text" class="infoInput secondInput"/>
+         <p class="requirements requirementB">მინიმუმ 2 სიმბოლო</p>
+         <p class="requirements requirementB">მაქსიმუმ 255 სიმბოლო</p>
        </div>
      </div>
 
@@ -103,7 +107,9 @@
            <img src="/bootCampProject/Decals/arrow-down.png" alt="arrowdown" class="arrow-down">
        </div>
    </div>
-   
+
+   <ul class="dropdown-menu" id="departamentMenu"></ul> 
+
    <div class="job-buttons">
        <div class="job-btn1">გაუქმება</div>
        <div class="job-btn2">დაამატე თანამშრომელი</div>
@@ -112,40 +118,8 @@
 
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/bootCampProject/script.js"></script>
+<script src="/bootCampProject/Pages/validCheck.js"></script>
 </html>
 
-<script>
-
-/*temprary script here for setting default img upon load*/
-const imageUpload = document.getElementById("imageUpload");
-const preview = document.getElementById("preview");
-const deleteBtn = document.getElementById("deleteImage");
-
-const defaultImage = "/bootCampProject/Decals/Frame 1000005909.png";
-preview.src = defaultImage;
-
-preview.addEventListener("click", function() {
-    imageUpload.click();
-});
-
-imageUpload.addEventListener("change", function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            preview.src = e.target.result;
-            deleteBtn.style.display = "flex";
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-deleteBtn.addEventListener("click", function() {
-    preview.src = defaultImage; 
-    deleteBtn.style.display = "none";
-    imageUpload.value = "";
-});
-
-  
-</script>

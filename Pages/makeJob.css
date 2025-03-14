@@ -172,8 +172,8 @@ div p{
 }
 
 .worker .input {
-    pointer-events: none; /* Prevents clicking */
-    background-color: #e0e0e0; /* Greyed out */
+    pointer-events: none; 
+    background-color: #e0e0e0;
     color: #6c757d;
 }
 

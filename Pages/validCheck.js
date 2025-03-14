@@ -1,17 +1,22 @@
 /* valid check */
-const headerInput = document.getElementById("inputforHeader");
-const descriptionInput = document.getElementById("inputforDescription");
+const headerInput = document.querySelector(".firstInput")
+const descriptionInput = document.querySelector(".secondInput")
 const requirementA = document.querySelectorAll(".requirementA");
 const requirementB = document.querySelectorAll(".requirementB");
+let headerInputValid = false;
+let descriptionInputValid = false;
+
 headerInput.addEventListener("input", () => {
     if (headerInput.value.trim().length >= 2 && headerInput.value.trim().length <= 255) {
         requirementA.forEach((element) => {
             element.style.color = "green";
         });
+        headerInputValid = true;
     } else {
         requirementA.forEach((element) => {
             element.style.color = "#6C757D";
         });
+        headerInputValid = false;
     }
 });
 descriptionInput.addEventListener("input", () => {
@@ -19,12 +24,15 @@ descriptionInput.addEventListener("input", () => {
         requirementB.forEach((element) => {
             element.style.color = "green";
         });
+        descriptionInputValid = true;
     } else {
         requirementB.forEach((element) => {
             element.style.color = "#6C757D";
         });
+        descriptionInputValid = false;
     }
 });
+
 
 
 const taskTitle = document.getElementById("inputforHeader");

@@ -25,7 +25,7 @@
         />
       </div>
       <div class="btns">
-        <button class="btn" id="button1">თანამშრომლის შექმნა</button>
+        <button class="btn" id="button1">თანამშრომლის შექმნა</button> <!--tobeimplemented-->
         <button class="btn" id="button2">+ შექმენი ახალი დავალება</button>
       </div>
     </header>
@@ -36,13 +36,13 @@
       <div class="left-part">
         <div class="header">
           <p>სათაური*</p>
-          <input type="text" class="input" id="inputforHeader" />
+          <input type="text" class="input firstInput" id="inputforHeader"/>
           <p class="requirements requirementA">მინიმუმ 2 სიმბოლო</p>
           <p class="requirements requirementA">მაქსიმუმ 255 სიმბოლო</p>
         </div>
         <div class="description">
           <p>აღწერა</p>
-          <input type="text" class="input" id="inputforDescription" />
+          <input type="text" class="input secondInput" id="inputforDescription" />
           <p class="requirements requirementB">მინიმუმ 2 სიმბოლო</p>
           <p class="requirements requirementB">მაქსიმუმ 255 სიმბოლო</p>
         </div>
@@ -52,10 +52,10 @@
             <p>სტატუსი*</p>
           </div>
           <div class="inputs">
-            <div class="custom-dropdown"> <!-- ADDED -->
+            <div class="custom-dropdown"> 
               <div class="input" id="inputforPriority">
                 <img src="/bootCampProject/Decals/Medium.png" alt="" />
-                <p id="priorityText">საშუალო</p> <!-- ADDED -->
+                <p id="priorityText">საშუალო</p> 
                 <img
                   src="/bootCampProject/Decals/arrow-down.png"
                   alt="arrowdown"
@@ -75,9 +75,9 @@
             </div>
           </div>
 
-          <!-- To be replaced -->
-          <ul class="dropdown-menu" id="priorityMenu"></ul>
-          <ul class="dropdown-menu" id="statusMenu"></ul>
+          
+          <ul class="dropdown-menu" id="priorityMenu"></ul> <!-- priority dropdown -->
+          <ul class="dropdown-menu" id="statusMenu"></ul> <!-- status dropdown -->
    
         </div>
       </div>
@@ -94,7 +94,7 @@
             />
           </div>
         </div>
-        <ul class="dropdown-menu" id="departamentMenu"></ul> <!-- ADDED -->
+        <ul class="dropdown-menu" id="departamentMenu"></ul> <!-- departament dropdown -->
         <div class="worker">
           <p class="disabled-text">პასუხისმგებელი თანამშრომელი</p>
           <div class="input" id="inputforWorker">
@@ -117,5 +117,4 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="/bootCampProject/Pages/validCheck.js"></script>
   <script src="/bootCampProject/Pages/dropdown.js"></script>
-  <script src="/bootCampProject/script.js"></script>
 </html>
