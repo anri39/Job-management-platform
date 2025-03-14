@@ -1,5 +1,4 @@
 /* to have workers selection disabled until dep is chosen */
-
 const workerInput = document.getElementById("inputforWorker");
 const departmentInput = document.getElementById("inputforDepartament");
 workerInput.style.pointerEvents = "none";
@@ -16,9 +15,6 @@ document.getElementById("departamentMenu").addEventListener("click", function (e
     }
 });
 
- 
- 
- 
  
  /* collect data from api and store it  */
  async function fetchDropdownData(type) {
@@ -66,7 +62,6 @@ async function populateDropdown(type) {
 
         dropdownMenu.appendChild(li);  
 
-         
         li.addEventListener("click", function () {
             const inputElement = document.getElementById(`inputfor${type.charAt(0).toUpperCase() + type.slice(1)}`);  
 
