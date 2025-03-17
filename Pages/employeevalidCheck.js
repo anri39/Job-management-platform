@@ -31,18 +31,6 @@ deleteBtn.addEventListener("click", function() {
 });
 
 
-// for other pages that have this JS linked
-document.addEventListener("DOMContentLoaded", () => {
-    const targetElement = document.getElementById("yourElementId");
-
-    if (targetElement) {
-        targetElement.addEventListener("click", () => {
-            console.log("Clicked!");
-        });
-    }
-});
-
-
 // submit and validation
 createWorkerButton.addEventListener("click", async (event) => {
     if (headerInputValid === false || descriptionInputValid === false) {
@@ -71,12 +59,12 @@ createWorkerButton.addEventListener("click", async (event) => {
     formData.append("surname", workerLastName);
     formData.append("department_id", Number(selectedDepartment));
     formData.append("avatar", avatarFile, avatarFile.name); 
-    const token = 0; // add ur token here
+    
     try {
         const response = await axios.post("https://momentum.redberryinternship.ge/api/employees", formData, { 
             headers: { 
                 "Content-Type": "multipart/form-data",  
-                "Authorization": `Bearer ${token}`
+                 "Authorization": `Bearer ` // a
             }
         });
         console.log("Success:", response.data);

@@ -30,12 +30,11 @@ document.getElementById("departamentMenu").addEventListener("click", function (e
         url = "https://momentum.redberryinternship.ge/api/employees";
     }
 
-    const token = 0; // add ur token here
 
     try {
         const response = await axios.get(url, {
             headers: { 
-                "Authorization": `Bearer ${token}`,
+                "Authorization" : `Bearer `, // a
                 "Content-Type": "application/json"
             }
         })
@@ -73,28 +72,30 @@ async function populateDropdown(type) {
 
         li.addEventListener("click", function () {
             const inputElement = document.getElementById(`inputfor${type.charAt(0).toUpperCase() + type.slice(1)}`);  
-
-            if (type === "priority") {
-                const priorityImg = inputElement.querySelector("img:first-of-type");
-                if (priorityImg) {
-                    priorityImg.src = item.icon;   
-                    priorityImg.alt = item.name;
+            if (inputElement) {
+                inputElement.setAttribute("data-selected-id", item.id);  
+        
+                if (type === "priority") {
+                    const priorityImg = inputElement.querySelector("img:first-of-type");
+                    if (priorityImg) {
+                        priorityImg.src = item.icon;   
+                        priorityImg.alt = item.name;
+                    }
+                    const textElement = inputElement.querySelector("p");
+                    textElement.textContent = item.name;  
+                } else if (type === "status") {
+                    const textElement = inputElement.querySelector(".statusText");
+                    textElement.textContent = item.name;  
+                } else if (type === "departament") {  
+                    const textElement = inputElement.querySelector("p");
+                    textElement.textContent = item.name;  
+                } else if (type === "worker") {
+                    const textElement = inputElement.querySelector("p");
+                    textElement.textContent = item.name;  
                 }
-                const textElement = inputElement.querySelector("p");
-                textElement.textContent = item.name; 
-            } else if (type === "status") {
-                const textElement = inputElement.querySelector(".statusText");
-                textElement.textContent = item.name;  
-            } else if (type === "departament") {  
-                const textElement = inputElement.querySelector("p");
-                textElement.textContent = item.name;  
-            } else if(type === "worker"){
-                const textElement = inputElement.querySelector("p");
-                textElement.textContent = item.name;  
-            }
-
-            dropdownMenu.style.display = "none";   
-        });
+    
+                dropdownMenu.style.display = "none"; 
+        }});
     });
 
     dropdownMenu.style.display = "block";   
