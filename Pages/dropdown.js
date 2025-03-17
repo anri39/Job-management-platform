@@ -26,10 +26,19 @@ document.getElementById("departamentMenu").addEventListener("click", function (e
         url = "https://momentum.redberryinternship.ge/api/statuses";
     } else if (type === "departament") {
         url = "https://momentum.redberryinternship.ge/api/departments";  
+    } else if (type === "worker") {  
+        url = "https://momentum.redberryinternship.ge/api/employees";
     }
 
+    const token = 0; // add ur token here
+
     try {
-        const response = await axios.get(url);  
+        const response = await axios.get(url, {
+            headers: { 
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        })
         return response.data;   
     } catch (error) {
         console.error(error);   
@@ -79,6 +88,9 @@ async function populateDropdown(type) {
             } else if (type === "departament") {  
                 const textElement = inputElement.querySelector("p");
                 textElement.textContent = item.name;  
+            } else if(type === "worker"){
+                const textElement = inputElement.querySelector("p");
+                textElement.textContent = item.name;  
             }
 
             dropdownMenu.style.display = "none";   
@@ -92,6 +104,8 @@ async function populateDropdown(type) {
 document.getElementById("inputforPriority").addEventListener("click", () => populateDropdown("priority"));
 document.getElementById("inputforStatus").addEventListener("click", () => populateDropdown("status"));
 document.getElementById("inputforDepartament").addEventListener("click", () => populateDropdown("departament"));   
+document.getElementById("inputforWorker").addEventListener("click", () => populateDropdown("worker"));   
+
 
 // for closing when clicking outside box
 document.addEventListener("click", (event) => {
@@ -101,3 +115,4 @@ document.addEventListener("click", (event) => {
         }
     });
 });
+

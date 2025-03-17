@@ -169,6 +169,7 @@ div p{
 
 .disabled-text{
     color:#ADB5BD;
+    white-space: nowrap;
 }
 
 .worker .input {
@@ -257,6 +258,12 @@ div p{
     list-style: none;
     padding: 0;
     margin-top: 80px;
+    z-index: 1000;
+}
+
+#workerMenu{
+    margin-top: 230px;
+    width: 640px;
 }
 
 #priorityMenu{
@@ -270,6 +277,7 @@ div p{
 
 #departamentMenu{
     width: 550px;
+    z-index: 1000;
 }
 
 .dropdown-menu li {

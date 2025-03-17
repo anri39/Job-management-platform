@@ -52,6 +52,7 @@ async function populateDropdown(type) {
              if (type === "departament") {  
                 const textElement = inputElement.querySelector("p");
                 textElement.textContent = item.name;  
+                inputElement.setAttribute("data-selected-id", item.id); 
             }
             dropdownMenu.style.display = "none";   
         });
@@ -59,35 +60,3 @@ async function populateDropdown(type) {
     dropdownMenu.style.display = "block";   
 }
 document.getElementById("inputforDepartament").addEventListener("click", () => populateDropdown("departament"));   
-
-
-
-/*here for setting default img upon load*/
-const imageUpload = document.getElementById("imageUpload");
-const preview = document.getElementById("preview");
-const deleteBtn = document.getElementById("deleteImage");
-
-const defaultImage = "/bootCampProject/Decals/Frame 1000005909.png";
-preview.src = defaultImage;
-
-preview.addEventListener("click", function() {
-    imageUpload.click();
-});
-
-imageUpload.addEventListener("change", function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            preview.src = e.target.result;
-            deleteBtn.style.display = "flex";
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-deleteBtn.addEventListener("click", function() {
-    preview.src = defaultImage; 
-    deleteBtn.style.display = "none";
-    imageUpload.value = "";
-});

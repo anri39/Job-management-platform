@@ -1,6 +1,5 @@
-/* valid check */
-const headerInput = document.querySelector(".firstInput")
-const descriptionInput = document.querySelector(".secondInput")
+const headerInput = document.querySelector(".firstInput");
+const descriptionInput = document.querySelector(".secondInput");
 const requirementA = document.querySelectorAll(".requirementA");
 const requirementB = document.querySelectorAll(".requirementB");
 let headerInputValid = false;
@@ -32,14 +31,3 @@ descriptionInput.addEventListener("input", () => {
         descriptionInputValid = false;
     }
 });
-
-
-
-const taskTitle = document.getElementById("inputforHeader");
-const taskDescription = document.getElementById("inputforDescription");
-const taskPriority = document.getElementById("inputforPriority");
-const taskStatus = document.getElementById("inputforStatus");
-const taskDepartment = document.getElementById("inputforDepartament");
-const taskWorker = document.getElementById("inputforWorker");
-const taskDeadline = document.getElementById("inputforDate");
-
