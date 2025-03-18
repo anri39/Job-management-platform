@@ -34,7 +34,7 @@ document.getElementById("departamentMenu").addEventListener("click", function (e
     try {
         const response = await axios.get(url, {
             headers: { 
-                "Authorization" : `Bearer `, // a
+                "Authorization" : `Bearer `, // token
                 "Content-Type": "application/json"
             }
         })

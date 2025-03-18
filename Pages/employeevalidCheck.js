@@ -64,7 +64,7 @@ createWorkerButton.addEventListener("click", async (event) => {
         const response = await axios.post("https://momentum.redberryinternship.ge/api/employees", formData, { 
             headers: { 
                 "Content-Type": "multipart/form-data",  
-                 "Authorization": `Bearer ` // a
+                 "Authorization": `Bearer ` // token
             }
         });
         console.log("Success:", response.data);

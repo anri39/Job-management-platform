@@ -41,7 +41,7 @@ createJob.addEventListener("click", async (event) => {
         const response = await axios.post("https://momentum.redberryinternship.ge/api/tasks", jobInfo, {
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " // a
+                "Authorization": "Bearer " // token
             }
         });
     } catch (error) {

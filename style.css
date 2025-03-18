@@ -140,10 +140,26 @@ header {
 /*FILTER DROPDOWN END*/
 #work-boxes {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 52px;
   margin-top: 79px;
+}
+
+.started li {
+  border: 1px solid #f7bc30;
+}
+
+.inProgress li {
+  border: 1px solid #fb5607;
+}
+
+.readyforTesting li {
+  border: 1px solid #ff006e;
+}
+
+.productFinished li {
+  border: 1px solid #3a86ff;
 }
 
 .box-container {
@@ -174,6 +190,7 @@ header {
 .progressP {
   background-color: #fb5607;
 }
+
 .readyP {
   background-color: #ff006e;
 }
@@ -302,6 +319,32 @@ header {
   display: flex;
 }
 
+.font {
+  font-family: FiraGO;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.font1 {
+  font-family: FiraGO;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: black;
+}
+
+.font2 {
+  font-family: FiraGO;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #343a40;
+}
+
 .input {
   width: 382px;
   height: 48px;
@@ -313,15 +356,14 @@ header {
   user-select: none;
 }
 
-.requirements{
+.requirements {
   margin-top: 5px;
   font-weight: 350;
   font-size: 11px;
   line-height: 100%;
   letter-spacing: 0%;
-  color: #6C757D;
+  color: #6c757d;
 }
-
 
 .infoInput {
   width: 384px;
@@ -402,3 +444,97 @@ header {
 .dropdown-menu li:hover {
   background-color: #f1f1f1;
 }
+
+/*TASK ADD*/
+.start-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.li-boxes {
+  width: 381px;
+  height: 217px;
+  border-radius: 15px;
+  border-width: 1px;
+  padding: 20px;
+  border: 1px solid #f7bc30;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.first-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inside-first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.middle-part {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.last-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconOutput {
+  width: 31px;
+  height: 31px;
+  border-radius: 100%;
+}
+
+.taskPriority{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid #ffbe0b;
+  width: 86px;
+  height: 26px;
+  border-radius: 4px;
+  gap: 4px;
+  border-width: 0.5px;
+  padding: 4px;
+  text-align: center;
+  color: #ffbe0b;
+}
+
+.departamentOutput {
+  width: 150px;
+  height: 24px;
+  border-radius: 15px;
+  gap: 10px;
+  padding: 5px 9px 5px 9px;
+  background-color: #ff66a8;
+  color: white;
+  text-align: center;
+}
+
+.high-priority {
+  border: 0.5px solid #FA4D4D;
+  color: #FA4D4D;
+}
+
+.medium-priority {
+  border: 0.5px solid #FFBE0B;
+  color: #FFBE0B;
+}
+
+.low-priority {
+  border: 0.5px solid #08A508;
+  color: #08A508;
+}
+
