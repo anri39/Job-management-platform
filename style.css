@@ -118,6 +118,10 @@ header {
   border-left-width: 1px;
 }
 
+.options > * {
+  user-select: none;
+}
+
 .p-dropdown {
   font-family: "FiraGO", sans-serif;
   font-weight: 500;
@@ -167,6 +171,10 @@ header {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.departament {
+  cursor: pointer;
 }
 
 .box-header {
@@ -422,6 +430,101 @@ header {
   position: relative;
 }
 
+#dmenu,
+#pmenu,
+#wmenu {
+  cursor: pointer;
+}
+
+#dmenuList {
+  position: absolute;
+  top: 280px;
+  left: 120px;
+  width: 688px;
+  height: 360px;
+  color: #212529;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid #8338ec;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+  padding: 40px 30px 20px 30px ;
+}
+
+#pmenuList {
+  width: 688px;
+  height: 200px;
+  border-radius: 10px;
+  border-width: 0.5px;
+  padding: 20px 10px 10px 20px;
+  gap: 25px;
+  border: 0.5px solid #8338ec;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  top: 280px;
+  left: 120px;
+}
+
+#wmenuList{
+  width: 688px;
+  min-height: 300px; 
+  border-radius: 10px;
+  border-width: 0.5px;
+  padding: 20px 10px 10px 20px;
+  gap: 25px;
+  border: 0.5px solid #8338ec;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  top: 280px;
+  left: 120px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #212529;
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border-width: 1.5px;
+  gap: 10px;
+  padding: 10px;
+  border: 1.5px solid #212529;
+  color: #212529;
+}
+
+.dropdownButton {
+  width: 155px;
+  height: 35px;
+  padding: 8px 20px 8px 20px;
+  gap: 10px;
+  background: #8338ec;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-family: FiraGO;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 500px;
+}
+
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -497,7 +600,7 @@ header {
   border-radius: 100%;
 }
 
-.taskPriority{
+.taskPriority {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -523,18 +626,19 @@ header {
   text-align: center;
 }
 
+
+/* for priority colors */
 .high-priority {
-  border: 0.5px solid #FA4D4D;
-  color: #FA4D4D;
+  border: 0.5px solid #fa4d4d;
+  color: #fa4d4d;
 }
 
 .medium-priority {
-  border: 0.5px solid #FFBE0B;
-  color: #FFBE0B;
+  border: 0.5px solid #ffbe0b;
+  color: #ffbe0b;
 }
 
 .low-priority {
-  border: 0.5px solid #08A508;
-  color: #08A508;
+  border: 0.5px solid #08a508;
+  color: #08a508;
 }
-

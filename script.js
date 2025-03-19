@@ -71,7 +71,7 @@ const statusMap = {
   async function fetchTasks() {
     try {
       const response = await axios.get("https://momentum.redberryinternship.ge/api/tasks", {
-        headers: { "Authorization": `Bearer ` } // token
+        headers: { "Authorization": `Bearer `} // token
       });
   
       const tasks = response.data;

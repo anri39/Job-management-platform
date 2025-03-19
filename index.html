@@ -27,18 +27,24 @@
     </section>
 
     <section id="drop-down">
-     <div class="options" id="departament">
-        <p class="p-dropdown p-first">დეპარტამენტი</p>
-        <img src="/bootCampProject/Decals/purpleIcon.png" alt="dropicon" class="icon-dropdown">
+     <div class="options" id="dmenu"> <!-- departament dropdown -->
+        <p class="p-dropdown p-dep">დეპარტამენტი</p>
+        <img src="/bootCampProject/Decals/Icon.png" alt="dropicon" class="icon-dropdown p-dep-icon">
      </div>
-     <div class="options" id="priority">
-        <p class="p-dropdown">პრიორიტეტი</p>
-        <img src="/bootCampProject/Decals/Icon.png" alt="dropicon" class="icon-dropdown">
+     <ul class="dropdown-menu" id="dmenuList" style="display:none;"></ul> <!-- departament dropdown -->
+
+     <div class="options" id="pmenu"> <!-- priority dropdown -->
+        <p class="p-dropdown p-prio">პრიორიტეტი</p>
+        <img src="/bootCampProject/Decals/Icon.png" alt="dropicon" class="icon-dropdown p-prio-icon">
      </div>
-     <div class="options" id="worker">
-        <p class="p-dropdown">თანამშრომელი</p>
-        <img src="/bootCampProject/Decals/Icon.png" alt="dropicon" class="icon-dropdown">
+     <ul class="dropdown-menu" id="pmenuList" style="display:none;"></ul> <!-- priority dropdown -->
+
+     <div class="options" id="wmenu"> <!-- worker dropdown -->
+        <p class="p-dropdown p-work">თანამშრომელი</p>
+        <img src="/bootCampProject/Decals/Icon.png" alt="dropicon" class="icon-dropdown p-work-icon">
      </div>
+     <ul class="dropdown-menu" id="wmenuList" style="display:none;"></ul> <!-- worker dropdown -->
+
     </section>
    <!-- filter drop-down ends -->
 
@@ -81,13 +87,13 @@
      <div class="info">
        <div class="name">
          <p>სახელი*</p>
-         <input type="text" class="infoInput firstInput" />
+         <input type="text" class="infoInput firstInput" /> <!-- name input -->
          <p class="requirements requirementA">მინიმუმ 2 სიმბოლო</p>
          <p class="requirements requirementA">მაქსიმუმ 255 სიმბოლო</p>
        </div>
        <div class="lastName">
          <p>გვარი*</p>
-         <input type="text" class="infoInput secondInput"/>
+         <input type="text" class="infoInput secondInput"/> <!-- lastname input  -->
          <p class="requirements requirementB">მინიმუმ 2 სიმბოლო</p>
          <p class="requirements requirementB">მაქსიმუმ 255 სიმბოლო</p>
        </div>
@@ -124,5 +130,6 @@
 <script src="/bootCampProject/script.js"></script>
 <script src="/bootCampProject/Pages/employeevalidCheck.js"></script>
 <script src="/bootCampProject/Pages/textLengthCheck.js"></script>
+<script src="/bootCampProject/Pages/filter.js"></script>
 </html>
 
