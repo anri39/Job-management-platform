@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link
+      href="https://free.bboxtype.com/embedfonts/?family=FiraGO:300"
+      rel="stylesheet"
+    />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/bootCampProject/Pages/commentPage.css" />
+  </head>
+  <body>
+    <header>
+        <div class="logo">
+            <p>Momentum</p>
+            <img src="/bootCampProject/Decals/Hourglass.png" alt="hourglass" id="hourglass">   
+        </div>
+        <div class="btns">
+            <button class="btn" id="button1">თანამშრომლის შექმნა</button>
+           <a href="/bootCampProject/Pages/makeJob.html" target="_blank"><button class="btn" id="button2">+ შექმენი ახალი დავალება</button></a>
+        </div>
+    </header>
+   <!-- header ends -->
+<div class="layout">    
+<div class="wrapper">
+        <div class="first-Container">
+            <div class="first-part">
+                <div class="inside-first">
+                <div class="taskPriority">
+                  <!--<img src="${task.priority.icon}" alt="status-icon" class="status-icon"> -->
+                  <p class="priorityOutput font">საშუალო</p>
+                </div>
+                  <p class="departamentOutput font">
+                  დიზაინი
+                  </p>
+                </div>
+              </div>
+              <div class="middle-part">
+                <p class="headerOutput font1">Redberry-ს საიტის ლენდინგის დიზაინი </p>
+                <p class="descriptionOutput font2">მიზანია რომ შეიქმნას თანამედროვე, სუფთა და ფუნქციონალური დიზაინი, რომელიც უზრუნველყოფს მარტივ ნავიგაციას და მკაფიო ინფორმაციის გადაცემას. დიზაინი უნდა იყოს ადაპტირებადი (responsive), გამორჩეული ვიზუალით, მინიმალისტური სტილით და ნათელი ტიპოგრაფიით.</p>
+              </div>
+        </div>
+
+    <div class="second-Container">
+    <p class="homeworkHeader font3">დავალების დეტალები</p>
+    <div class="status">
+        <i class='bx bxs-pie-chart-alt font4' >სტატუსი</i>
+        <div class="statusDropdown">
+            <p class="font5">მზად ტესტირებისთვის</p>
+            <img src="/bootCampProject/Decals/arrow-down.png" alt="arrowdown">
+        </div>
+    </div>
+
+    <div class="worker">
+        <i class='bx bx-user font4' >თანამშრომელი</i>
+        <div class="workerBox">
+            <img src="/bootCampProject/Decals/Frame 1000005909.png" alt="" class="workerIcon">
+            <div class="workerText">
+                <p class="departamentName">დიზაინის დეპარტამენტი</p>
+                <p class="workerName">ელაია ბაგრატიონი</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="deadline">
+        <i class='bx bx-calendar-alt font4' >დავალების ვადა</i>
+        <p class="deadlineText">ორშ- 02/2/2025</p>
+    </div>
+</div>
+    </div>
+
+<div class="comment-container">
+    <div class="comment-part">
+    <input type="text" class="commentArea" placeholder="დაწერე კომენტარი">
+    <button class="commentButton">დააკომენტარე</button>
+</div>
+    <p>კომენტარები:</p>
+    <ul class="writtenComments"></ul>
+</div>
+</div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/bootCampProject/Pages/commentPage.js"></script>
+</html>
