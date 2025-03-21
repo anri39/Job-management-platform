@@ -24,8 +24,8 @@ createJob.addEventListener("click", async (event) => {
         return;
     }
 
-    // Validation for description
-    if (!descriptionInputValid) {
+    // Validation for description 
+    if (descriptionInputValue && (descriptionInputValue.length < 4 || descriptionInputValue.length > 255)) {
         alert("Please enter a valid job description (4 to 255 characters).");
         return;
     }
