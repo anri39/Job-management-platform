@@ -1,10 +1,20 @@
-
 // for opening / closing workerMenu
 const createWorker = document.getElementById("button1");
 const blur = document.querySelector(".blur")
 const workeraddMenu = document.querySelector(".workAdd");
 const closeworkerMenu = document.querySelector(".close");
 const closeButton = document.querySelector(".job-btn1")
+
+// to load it  if url has openMenu=true
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const openMenu = urlParams.get('openMenu');
+    if (openMenu && blur && workeraddMenu) {
+        blur.classList.add('active');
+        workeraddMenu.style.display = 'flex';
+    }
+});
+
 
 createWorker.addEventListener('click' , () =>{
      blur.classList.add("active");
@@ -14,11 +24,23 @@ createWorker.addEventListener('click' , () =>{
 closeworkerMenu.addEventListener('click', () =>{
     blur.classList.remove("active");
      workeraddMenu.style.display = "none";
+     document.querySelector(".firstInput").value = "";
+    document.querySelector(".secondInput").value = "";
+    document.getElementById("inputforDepartament").removeAttribute("data-selected-id"); 
+    preview.src = defaultImage;
+    deleteBtn.style.display = "none";
+    imageUpload.value = "";
 })
 
 closeButton.addEventListener('click', () =>{
     blur.classList.remove("active");
      workeraddMenu.style.display = "none";
+     document.querySelector(".firstInput").value = "";
+    document.querySelector(".secondInput").value = "";
+    document.getElementById("inputforDepartament").textContent = "";
+    preview.src = defaultImage;
+    deleteBtn.style.display = "none";
+    imageUpload.value = "";
 })
 
 /* departament dropdown */
@@ -70,20 +92,31 @@ const statusMap = {
   
   async function fetchTasks() {
     try {
-      const response = await axios.get("https://momentum.redberryinternship.ge/api/tasks", {
-        headers: { "Authorization": `Bearer `} // token
-      });
-  
-      const tasks = response.data;
-      if (!tasks.length) return;
-      document.querySelectorAll(".start-boxes").forEach(list => list.innerHTML = "");
-  
-      
-      tasks.forEach(task => addTaskToUI(task));
+        const response = await axios.get("https://momentum.redberryinternship.ge/api/tasks", {
+            headers: { "Authorization": `Bearer ${token}` } 
+        });
+
+        const tasks = response.data;
+        if (!tasks.length) return;
+
+        // clear all task lists
+        document.querySelectorAll(".start-boxes").forEach(list => list.innerHTML = "");
+
+        // filter tasks based on selected values
+        const filteredTasks = tasks.filter(task => {
+            const matchesDepartment = selectedDepartments.length === 0 || selectedDepartments.includes(task.department.id.toString());
+            const matchesPriority = selectedPriorities.length === 0 || selectedPriorities.includes(task.priority.id.toString());
+            const matchesWorker = selectedWorkers.length === 0 || selectedWorkers.includes(task.employee.id.toString());
+            return matchesDepartment && matchesPriority && matchesWorker;
+        });
+
+        // add filtered tasks to the UI
+        filteredTasks.forEach(task => addTaskToUI(task));
     } catch (error) {
-      console.error("Error fetching tasks:", error);
+        console.error("Error fetching tasks:", error);
     }
-  }
+}
+
   
 
   // format date in georgian
@@ -99,7 +132,7 @@ const statusMap = {
     const day = date.getDate();
     const month = georgianMonths[date.getMonth()];  
     const year = date.getFullYear();
-    // Format the output
+
     return `${day} ${month}, ${year}`;
 }
 
@@ -115,45 +148,48 @@ const priorityColors = {
     "დაბალი": "low-priority"   
 };
 
-  function addTaskToUI(task) {
-    const listSelector = statusMap[task.status.id] || ".started"; 
-    const list = document.querySelector(listSelector);
-    if (!list) return;
-  
-    const priorityClass = priorityColors[task.priority.name] || "";
+function addTaskToUI(task) {
+  const listSelector = statusMap[task.status.id] || ".started";
+  const list = document.querySelector(listSelector);
+  if (!list) return;
 
-    const li = document.createElement("li");
-    li.classList.add("li-boxes");
-  
-    // create li element and give it api given info
-    li.innerHTML = ` 
+  const priorityClass = priorityColors[task.priority.name] || "";
+
+  const li = document.createElement("li");
+  li.classList.add("li-boxes");
+  const description = task.description || "";
+
+  li.innerHTML = `
       <div class="first-part">
-        <div class="inside-first">
-        <div class="taskPriority ${priorityClass}">
-          <img src="${task.priority.icon}" alt="status-icon" class="status-icon">
-          <p class="priorityOutput font">${task.priority.name}</p>
-        </div>
-          <p class="departamentOutput font">
-          ${task.department.name.split(" ")[0]} 
-          ${task.department.name.split(" ")[1] ? task.department.name.split(" ")[1].slice(0, 3) : ""}
-          </p>
-        </div>
-        <p class="deadlineOutput font">${formattedDate}</p>
+          <div class="inside-first">
+              <div class="taskPriority ${priorityClass}">
+                  <img src="${task.priority.icon}" alt="status-icon" class="status-icon">
+                  <p class="priorityOutput font">${task.priority.name}</p>
+              </div>
+              <p class="departamentOutput font">
+                  ${task.department.name.split(" ")[0]} 
+                  ${task.department.name.split(" ")[1] ? task.department.name.split(" ")[1].slice(0, 3) : ""}
+              </p>
+          </div>
+          <p class="deadlineOutput font">${formatDate(task.due_date)}</p>
       </div>
       <div class="middle-part">
-        <p class="headerOutput font1">${task.name}</p>
-        <p class="descriptionOutput font2">${task.description}</p>
+          <p class="headerOutput font1">${task.name}</p>
+          <p class="descriptionOutput font2">${description}</p>
       </div>
       <div class="last-part">
-        <img src="${task.employee.avatar}" alt="pfp" class="iconOutput">
-        <i class='bx bx-comment commentOutput'>0</i>
+          <img src="${task.employee.avatar}" alt="pfp" class="iconOutput">
+          <i class='bx bx-comment commentOutput'>0</i>
       </div>
-    `;
-  
-    list.appendChild(li);
-  }
-  
+  `;
+
+  li.addEventListener("click", function () {
+      localStorage.setItem("selectedTask", JSON.stringify(task));
+      window.location.href = `./Pages/commentPage.html?taskId=${task.id}`;
+  });
+
+  list.appendChild(li);
+}
 
   document.addEventListener("DOMContentLoaded", fetchTasks);
-
-
+ 
