@@ -75,7 +75,7 @@ createJob.addEventListener("click", async (event) => {
         const response = await axios.post("https://momentum.redberryinternship.ge/api/tasks", jobInfo, {
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1` // token
+                "Authorization": `Bearer 9e7c1e7d-95dd-4847-941f-21b247bf390e` // token
             }
         });
         window.location.href = "/bootCampProject/index.html";

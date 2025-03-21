@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { text: commentText },
                 {
                     headers: {
-                        "Authorization": `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1`,
+                        "Authorization": `Bearer 9e7c1e7d-95dd-4847-941f-21b247bf390e`,
                         "Content-Type": "application/json"
                     }
                 }
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 `https://momentum.redberryinternship.ge/api/tasks/${taskId}/comments`,
                 {
                     headers: {
-                        "Authorization": `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1`,
+                        "Authorization": `Bearer 9e7c1e7d-95dd-4847-941f-21b247bf390e`,
                         "Content-Type": "application/json"
                     }
                 }
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const response = await axios.get(url, {
                 headers: { 
-                    "Authorization": `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1`, 
+                    "Authorization": `Bearer 9e7c1e7d-95dd-4847-941f-21b247bf390e`, 
                     "Content-Type": "application/json"
                 }
             });
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { status_id: statusId }, 
                 {
                     headers: {
-                        "Authorization": `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1`, 
+                        "Authorization": `Bearer 9e7c1e7d-95dd-4847-941f-21b247bf390e`, 
                         "Content-Type": "application/json"
                     }
                 }
@@ -243,3 +243,4 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCommentCount();
     fetchAndDisplayComments();
 });
+

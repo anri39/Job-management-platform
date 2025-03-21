@@ -1,3 +1,8 @@
+window.addEventListener("statusUpdated", function () {
+    console.log("Status updated detected. Re-fetching tasks...");
+    fetchTasks(); 
+});
+
 // for opening / closing workerMenu
 const createWorker = document.getElementById("button1");
 const blur = document.querySelector(".blur")
@@ -92,7 +97,7 @@ const statusMap = {
   async function fetchTasks() {
     try {
         const response = await axios.get("https://momentum.redberryinternship.ge/api/tasks", {
-            headers: { "Authorization": `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1` } 
+            headers: { "Authorization": `Bearer 9e7c1e7d-95dd-4847-941f-21b247bf390e` } 
         });
 
         const tasks = response.data;
