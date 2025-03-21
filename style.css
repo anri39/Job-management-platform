@@ -52,6 +52,11 @@ header {
   cursor: pointer;
 }
 
+a{
+  text-decoration: none;
+  color: #8338EC;
+}
+
 #button1 {
   width: 245px;
   height: 39px;

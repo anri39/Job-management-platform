@@ -12,6 +12,11 @@ header {
     padding: 30px 120px;
 }
 
+a{
+    text-decoration: none;
+    color: #8338EC;
+}
+
 .logo > * {
     font-family: 'Fredoka ONE';
     font-weight: 400;
