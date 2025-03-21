@@ -4,7 +4,7 @@ const blur = document.querySelector(".blur")
 const workeraddMenu = document.querySelector(".workAdd");
 const closeworkerMenu = document.querySelector(".close");
 const closeButton = document.querySelector(".job-btn1")
-
+const token = "9e6854de-648a-4721-9e28-696233baf82b"
 // to load it  if url has openMenu=true
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -185,7 +185,7 @@ function addTaskToUI(task) {
 
   li.addEventListener("click", function () {
       localStorage.setItem("selectedTask", JSON.stringify(task));
-      window.location.href = `./Pages/commentPage.html?taskId=${task.id}`;
+      window.location.href = `./Pages/commentPage.html?taskId=${task.id}`; 
   });
 
   list.appendChild(li);

@@ -4,7 +4,7 @@ const departmentInput = document.getElementById("inputforDepartament");
 workerInput.style.pointerEvents = "none";
 workerInput.style.backgroundColor = "#e0e0e0";
 workerInput.style.color = "#6c757d";
-
+const token = "9e6854de-648a-4721-9e28-696233baf82b"
 
 // until dep is chosen you can't select employee
 document.getElementById("departamentMenu").addEventListener("click", function (event) {
@@ -188,5 +188,5 @@ document.addEventListener("click", (event) => {
 // to move to index.html when create employe is clicked
 const button1 = document.getElementById('button1');
 button1.addEventListener('click', () => {
-    window.location.href = "/bootCampProject/index.html?openMenu=true";
+    window.location.href = "../index.html?openMenu=true";
 });
