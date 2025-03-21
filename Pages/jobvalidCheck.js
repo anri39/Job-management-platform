@@ -1,25 +1,39 @@
 const createJob = document.getElementById("createButton");
 
-// to set default date to always tommorow
+// Set default date to always tomorrow
 let taskDeadlineInput = document.getElementById("inputforDate");
 let tomorrow = new Date();
 tomorrow.setDate(tomorrow.getDate() + 1);  
 let tomorrowDate = tomorrow.toISOString().split('T')[0]; 
 taskDeadlineInput.value = tomorrowDate;
 
-
 createJob.addEventListener("click", async (event) => {
-    const headerInput = document.querySelector(".firstInput").value.trim();
-    const descriptionInput = document.querySelector(".secondInput").value.trim();
+    event.preventDefault(); 
+
+    const headerInputValue = headerInput.value.trim();
+    const descriptionInputValue = descriptionInput.value.trim();
     const taskPriority = document.getElementById("inputforPriority");
     const taskStatus = document.getElementById("inputforStatus");
     const taskDepartment = document.getElementById("inputforDepartament");
     const taskWorker = document.getElementById("inputforWorker");
     const taskDeadline = document.getElementById("inputforDate").value;
 
-    if (!headerInput) {
-        alert("Please enter a valid job title and description.");
-        event.preventDefault();
+    // Validation for header
+    if (!headerInputValid) {
+        alert("Please enter a valid job title (3 to 255 characters).");
+        return;
+    }
+
+    // Validation for description
+    if (!descriptionInputValid) {
+        alert("Please enter a valid job description (4 to 255 characters).");
+        return;
+    }
+
+    // Validation for date 
+    const currentDate = new Date().toISOString().split('T')[0]; 
+    if (taskDeadline < currentDate) {
+        alert("The selected date cannot be behind the current date.");
         return;
     }
 
@@ -28,7 +42,7 @@ createJob.addEventListener("click", async (event) => {
     const selectedDepartment = taskDepartment.getAttribute("data-selected-id");
     const selectedWorker = taskWorker.getAttribute("data-selected-id");
 
-    // Validation checks
+    // Validation for dropdowns
     if (!selectedPriority || !selectedStatus || !selectedDepartment || !selectedWorker) {
         alert("Please select all required fields before creating a job.");
         return;
@@ -36,9 +50,9 @@ createJob.addEventListener("click", async (event) => {
 
     let jobInfo;
 
-    if (!descriptionInput) {
+    if (!descriptionInputValue) {
         jobInfo = {
-            name: headerInput,
+            name: headerInputValue,
             due_date: taskDeadline,
             status_id: Number(selectedStatus),
             employee_id: Number(selectedWorker),
@@ -47,8 +61,8 @@ createJob.addEventListener("click", async (event) => {
         }; 
     } else {
         jobInfo = {
-            name: headerInput,
-            description: descriptionInput,
+            name: headerInputValue,
+            description: descriptionInputValue,
             due_date: taskDeadline,
             status_id: Number(selectedStatus),
             employee_id: Number(selectedWorker),
@@ -61,12 +75,12 @@ createJob.addEventListener("click", async (event) => {
         const response = await axios.post("https://momentum.redberryinternship.ge/api/tasks", jobInfo, {
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b` // token
+                "Authorization": `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1` // token
             }
         });
         window.location.href = "/bootCampProject/index.html";
     } catch (error) {
         console.error(error.response ? error.response.data : error);
-        alert("failed to create a job check inputs and try again");
+        alert("Failed to create a job. Check inputs and try again.");
     }
 });

@@ -1,5 +1,4 @@
 const createWorkerButton = document.querySelector(".job-btn2");
-
 /*here for setting default img upon load*/
 const imageUpload = document.getElementById("imageUpload");
 const preview = document.getElementById("preview");
@@ -64,7 +63,7 @@ createWorkerButton.addEventListener("click", async (event) => {
         const response = await axios.post("https://momentum.redberryinternship.ge/api/employees", formData, { 
             headers: { 
                 "Content-Type": "multipart/form-data",  
-                 "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b` // token
+                 "Authorization": `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1` // token
             }
         });
         console.log("Success:", response.data);

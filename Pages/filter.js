@@ -30,7 +30,7 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
         if (dropdown.innerHTML.trim() === "") {
             axios.get(apiUrl, {
                 headers: {
-                    Authorization: `Bearer 9e6854de-648a-4721-9e28-696233baf82b`
+                    Authorization: `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1`
                 }
             })
             .then(response => {

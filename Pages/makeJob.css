@@ -155,6 +155,11 @@ div p{
     cursor: pointer;
   }
 
+#createButton:disabled {
+    background-color: #d3d3d3;
+    color: #a9a9a9;  
+    cursor: not-allowed; 
+}
 
 .input {
     width: 640px;

@@ -41,7 +41,7 @@ async function fetchDropdownData(type) {
     try {
         const response = await axios.get(url, {
             headers: { 
-                "Authorization" : `Bearer 9e6854de-648a-4721-9e28-696233baf82b`,
+                "Authorization" : `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1`,
                 "Content-Type": "application/json"
             }
         });
@@ -90,7 +90,7 @@ async function fetchWorkersByDepartment(departmentId) {
     try {
         const response = await axios.get(url, {
             headers: {
-                "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b`,
+                "Authorization": `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1`,
                 "Content-Type": "application/json"
             }
         });

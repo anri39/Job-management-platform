@@ -6,7 +6,8 @@ let headerInputValid = false;
 let descriptionInputValid = false;
 
 headerInput.addEventListener("input", () => {
-    if (headerInput.value.trim().length >= 2 && headerInput.value.trim().length <= 255) {
+    const headerValue = headerInput.value.trim();
+    if (headerValue.length >= 3 && headerValue.length <= 255) {
         requirementA.forEach((element) => {
             element.style.color = "green";
         });
@@ -18,8 +19,10 @@ headerInput.addEventListener("input", () => {
         headerInputValid = false;
     }
 });
+
 descriptionInput.addEventListener("input", () => {
-    if (descriptionInput.value.trim().length >= 2 && descriptionInput.value.trim().length <= 255) {
+    const descriptionValue = descriptionInput.value.trim();
+    if (descriptionValue.length >= 4 && descriptionValue.length <= 255) {
         requirementB.forEach((element) => {
             element.style.color = "green";
         });
@@ -31,3 +34,4 @@ descriptionInput.addEventListener("input", () => {
         descriptionInputValid = false;
     }
 });
+

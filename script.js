@@ -92,7 +92,7 @@ const statusMap = {
   async function fetchTasks() {
     try {
         const response = await axios.get("https://momentum.redberryinternship.ge/api/tasks", {
-            headers: { "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b` } 
+            headers: { "Authorization": `Bearer 9e7c0f2f-466e-4928-ab6e-d392912b01e1` } 
         });
 
         const tasks = response.data;

@@ -479,13 +479,14 @@ header {
   gap: 25px;
   border: 0.5px solid #8338ec;
   cursor: pointer;
-  overflow: hidden;
   position: absolute;
   top: 280px;
   left: 120px;
   background: white;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .listItem {
