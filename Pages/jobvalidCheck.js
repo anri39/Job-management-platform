@@ -1,4 +1,3 @@
-const token = "9e6854de-648a-4721-9e28-696233baf82b"
 const createJob = document.getElementById("createButton");
 
 // to set default date to always tommorow
@@ -62,7 +61,7 @@ createJob.addEventListener("click", async (event) => {
         const response = await axios.post("https://momentum.redberryinternship.ge/api/tasks", jobInfo, {
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}` // token
+                "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b` // token
             }
         });
         window.location.href = "/bootCampProject/index.html";

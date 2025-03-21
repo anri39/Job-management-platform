@@ -4,7 +4,6 @@ const blur = document.querySelector(".blur")
 const workeraddMenu = document.querySelector(".workAdd");
 const closeworkerMenu = document.querySelector(".close");
 const closeButton = document.querySelector(".job-btn1")
-const token = "9e6854de-648a-4721-9e28-696233baf82b"
 // to load it  if url has openMenu=true
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -93,7 +92,7 @@ const statusMap = {
   async function fetchTasks() {
     try {
         const response = await axios.get("https://momentum.redberryinternship.ge/api/tasks", {
-            headers: { "Authorization": `Bearer ${token}` } 
+            headers: { "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b` } 
         });
 
         const tasks = response.data;

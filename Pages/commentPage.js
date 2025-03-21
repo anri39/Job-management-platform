@@ -1,4 +1,3 @@
-const token = "9e6854de-648a-4721-9e28-696233baf82b";
 function getTaskIdFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get("taskId");  
@@ -80,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { text: commentText },
                 {
                     headers: {
-                        "Authorization": `Bearer ${token}`,
+                        "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b`,
                         "Content-Type": "application/json"
                     }
                 }
@@ -101,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 `https://momentum.redberryinternship.ge/api/tasks/${taskId}/comments`,
                 {
                     headers: {
-                        "Authorization": `Bearer ${token}`,
+                        "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b`,
                         "Content-Type": "application/json"
                     }
                 }
@@ -168,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const response = await axios.get(url, {
                 headers: { 
-                    "Authorization": `Bearer ${token}`, 
+                    "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b`, 
                     "Content-Type": "application/json"
                 }
             });
@@ -188,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { status_id: statusId }, 
                 {
                     headers: {
-                        "Authorization": `Bearer ${token}`, 
+                        "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b}`, 
                         "Content-Type": "application/json"
                     }
                 }

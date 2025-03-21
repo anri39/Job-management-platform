@@ -1,4 +1,3 @@
-const token = "9e6854de-648a-4721-9e28-696233baf82b"
 const createWorkerButton = document.querySelector(".job-btn2");
 
 /*here for setting default img upon load*/
@@ -65,7 +64,7 @@ createWorkerButton.addEventListener("click", async (event) => {
         const response = await axios.post("https://momentum.redberryinternship.ge/api/employees", formData, { 
             headers: { 
                 "Content-Type": "multipart/form-data",  
-                 "Authorization": `Bearer ${token}` // token
+                 "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b` // token
             }
         });
         console.log("Success:", response.data);

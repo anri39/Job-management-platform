@@ -4,7 +4,7 @@ const departmentInput = document.getElementById("inputforDepartament");
 workerInput.style.pointerEvents = "none";
 workerInput.style.backgroundColor = "#e0e0e0";
 workerInput.style.color = "#6c757d";
-const token = "9e6854de-648a-4721-9e28-696233baf82b"
+
 
 // until dep is chosen you can't select employee
 document.getElementById("departamentMenu").addEventListener("click", function (event) {
@@ -41,7 +41,7 @@ async function fetchDropdownData(type) {
     try {
         const response = await axios.get(url, {
             headers: { 
-                "Authorization" : `Bearer ${token}`,
+                "Authorization" : `Bearer 9e6854de-648a-4721-9e28-696233baf82b`,
                 "Content-Type": "application/json"
             }
         });
@@ -90,7 +90,7 @@ async function fetchWorkersByDepartment(departmentId) {
     try {
         const response = await axios.get(url, {
             headers: {
-                "Authorization": `Bearer ${token}`,
+                "Authorization": `Bearer 9e6854de-648a-4721-9e28-696233baf82b`,
                 "Content-Type": "application/json"
             }
         });
