@@ -25,7 +25,7 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
     menu.addEventListener("click", function () {
         dropdown.style.display = "block";
         header.classList.add("p-first");
-        icon.src = "/bootCampProject/Decals/purpleIcon.png";
+        icon.src = "../Decals/purpleIcon.png";
 
         if (dropdown.innerHTML.trim() === "") {
             axios.get(apiUrl, {
@@ -70,7 +70,7 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
                     label.style.flexGrow = "1";
 
                     if (filterType === "worker") {
-                        let avatarUrl = item.avatar && item.avatar.trim() !== "" ? item.avatar : "/bootCampProject/Decals/default-avatar.png";
+                        let avatarUrl = item.avatar && item.avatar.trim() !== "" ? item.avatar : "../Decals/default-avatar.png";
                         let iconImg = document.createElement("img");
                         iconImg.src = avatarUrl;
                         iconImg.alt = "Employee Avatar";
@@ -110,7 +110,7 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
                     // Close the dropdown
                     dropdown.style.display = "none";
                     header.classList.remove("p-first");
-                    icon.src = "/bootCampProject/Decals/Icon.png";
+                    icon.src = "../Decals/Icon.png";
 
                     fetchTasks();
                 });
@@ -126,7 +126,7 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
         if (!menu.contains(event.target) && !dropdown.contains(event.target)) {
             dropdown.style.display = "none";
             header.classList.remove("p-first");
-            icon.src = "/bootCampProject/Decals/Icon.png";
+            icon.src = "../Decals/Icon.png";
         }
     });
 }

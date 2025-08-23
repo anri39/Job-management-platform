@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const authorPfp = document.createElement("img");
             authorPfp.classList.add("commentAuthorPfp");
-            authorPfp.src = "/bootCampProject/Decals/Frame 1000005909.png"; 
+            authorPfp.src = "../Decals/Frame 1000005909.png"; 
 
             const commentTextContainer = document.createElement("div");
             commentTextContainer.classList.add("comment-text");
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const commentElement = document.createElement("div");
         commentElement.classList.add('commentary');  
         commentElement.innerHTML = `
-            <img src="/bootCampProject/Decals/Frame 1000005909.png" alt="" class="commentAuthorPfp">
+            <img src="../Decals/Frame 1000005909.png" alt="" class="commentAuthorPfp">
             <div class="comment-text">
                 <p class="commentName">ემილია მორგანი</p>
                 <p class="comment">${comment.text}</p>

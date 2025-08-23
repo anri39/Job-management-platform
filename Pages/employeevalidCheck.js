@@ -4,7 +4,7 @@ const imageUpload = document.getElementById("imageUpload");
 const preview = document.getElementById("preview");
 const deleteBtn = document.getElementById("deleteImage");
 
-const defaultImage = "/bootCampProject/Decals/Frame 1000005909.png";
+const defaultImage = "../Decals/Frame 1000005909.png";
 preview.src = defaultImage;
 
 preview.addEventListener("click", function() {

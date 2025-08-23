@@ -78,7 +78,7 @@ createJob.addEventListener("click", async (event) => {
                 "Authorization": `Bearer 9e7c1e7d-95dd-4847-941f-21b247bf390e` // token
             }
         });
-        window.location.href = "/bootCampProject/index.html";
+        window.location.href = "../index.html";
     } catch (error) {
         console.error(error.response ? error.response.data : error);
         alert("Failed to create a job. Check inputs and try again.");
