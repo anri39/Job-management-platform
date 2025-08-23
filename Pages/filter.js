@@ -15,8 +15,29 @@ document.addEventListener("DOMContentLoaded", function () {
     setupDropdown("wmenu", "wmenuList", workHeader, workHeaderIcon, "https://momentum.redberryinternship.ge/api/employees", "worker");
     setupDropdown("pmenu", "pmenuList", prioHeader, prioHeaderIcon, "https://momentum.redberryinternship.ge/api/priorities", "priority");
 
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", function(event) {
+        closeDropdownIfClickedOutside(event, "dmenu", "dmenuList", depHeader, depHeaderIcon);
+        closeDropdownIfClickedOutside(event, "wmenu", "wmenuList", workHeader, workHeaderIcon);
+        closeDropdownIfClickedOutside(event, "pmenu", "pmenuList", prioHeader, prioHeaderIcon);
+    });
+
     fetchTasks();
 });
+
+function closeDropdownIfClickedOutside(event, menuId, listId, header, icon) {
+    const menu = document.getElementById(menuId);
+    const dropdown = document.getElementById(listId);
+    
+    if (!menu.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = "none";
+        header.classList.remove("p-first");
+        if (icon) {
+            console.log("Restoring icon to normal:", icon);
+            icon.src = "Decals/Icon.png";
+        }
+    }
+}
 
 function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
     const menu = document.getElementById(menuId);
@@ -25,7 +46,12 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
     menu.addEventListener("click", function () {
         dropdown.style.display = "block";
         header.classList.add("p-first");
-        icon.src = "../Decals/purpleIcon.png";
+        if (icon) {
+            console.log("Changing icon to purple:", icon);
+            icon.src = "Decals/purpleIcon.png";
+        } else {
+            console.error("Icon element not found for:", menuId);
+        }
 
         if (dropdown.innerHTML.trim() === "") {
             axios.get(apiUrl, {
