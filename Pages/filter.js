@@ -34,7 +34,9 @@ function closeDropdownIfClickedOutside(event, menuId, listId, header, icon) {
         header.classList.remove("p-first");
         if (icon) {
             console.log("Restoring icon to normal:", icon);
+            console.log("Current icon src before restore:", icon.src);
             icon.src = "Decals/Icon.png";
+            console.log("Icon src after restore:", icon.src);
         }
     }
 }
@@ -48,7 +50,9 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
         header.classList.add("p-first");
         if (icon) {
             console.log("Changing icon to purple:", icon);
+            console.log("Current icon src:", icon.src);
             icon.src = "Decals/purpleIcon.png";
+            console.log("New icon src:", icon.src);
         } else {
             console.error("Icon element not found for:", menuId);
         }
@@ -136,7 +140,7 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
                     // Close the dropdown
                     dropdown.style.display = "none";
                     header.classList.remove("p-first");
-                    icon.src = "../Decals/Icon.png";
+                    icon.src = "Decals/Icon.png";
 
                     fetchTasks();
                 });
@@ -152,7 +156,7 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
         if (!menu.contains(event.target) && !dropdown.contains(event.target)) {
             dropdown.style.display = "none";
             header.classList.remove("p-first");
-            icon.src = "../Decals/Icon.png";
+            icon.src = "Decals/Icon.png";
         }
     });
 }
