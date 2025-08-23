@@ -100,7 +100,7 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
                     label.style.flexGrow = "1";
 
                     if (filterType === "worker") {
-                        let avatarUrl = item.avatar && item.avatar.trim() !== "" ? item.avatar : "../Decals/default-avatar.png";
+                        let avatarUrl = item.avatar && item.avatar.trim() !== "" ? item.avatar : "../Decals/Frame 1000005909.png";
                         let iconImg = document.createElement("img");
                         iconImg.src = avatarUrl;
                         iconImg.alt = "Employee Avatar";

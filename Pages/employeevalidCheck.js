@@ -5,7 +5,7 @@ const preview = document.getElementById("preview");
 const deleteBtn = document.getElementById("deleteImage");
 
 const defaultImage = "../Decals/Frame 1000005909.png";
-preview.src = defaultImage;
+// Don't set preview.src here since it's already set in HTML
 
 preview.addEventListener("click", function() {
     imageUpload.click();
