@@ -729,3 +729,13 @@ a{
 .options.p-first .icon-dropdown {
   transform: rotate(180deg);
 }
+
+/* Large desktop: expand Department and Priority dropdowns so they don't scroll */
+@media screen and (min-width: 1920px) and (min-height: 1080px) {
+  #dmenuList,
+  #pmenuList {
+    max-height: none;
+    height: auto;
+    overflow-y: visible;
+  }
+}
