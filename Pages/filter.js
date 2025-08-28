@@ -46,7 +46,7 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
     const dropdown = document.getElementById(listId);
 
     menu.addEventListener("click", function () {
-        dropdown.style.display = "block";
+        dropdown.style.display = "flex";
         header.classList.add("p-first");
         if (icon) {
             console.log("Changing icon to purple:", icon);
@@ -100,7 +100,7 @@ function setupDropdown(menuId, listId, header, icon, apiUrl, filterType) {
                     label.style.flexGrow = "1";
 
                     if (filterType === "worker") {
-                        let avatarUrl = item.avatar && item.avatar.trim() !== "" ? item.avatar : "../Decals/Frame 1000005909.png";
+                        let avatarUrl = item.avatar && item.avatar.trim() !== "" ? item.avatar : "Decals/Frame 1000005909.png";
                         let iconImg = document.createElement("img");
                         iconImg.src = avatarUrl;
                         iconImg.alt = "Employee Avatar";
